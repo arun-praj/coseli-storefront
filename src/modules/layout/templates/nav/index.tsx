@@ -1,4 +1,5 @@
 import { Suspense } from "react"
+import { ShoppingCartSolid } from "@medusajs/icons"
 
 import { listRegions } from "@lib/data"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
@@ -24,7 +25,7 @@ export default async function Nav() {
               className="txt-compact-xlarge-plus hover:text-ui-fg-base uppercase"
               data-testid="nav-store-link"
             >
-              Medusa Store
+              Coseli Shoes
             </LocalizedClientLink>
           </div>
 
@@ -55,7 +56,7 @@ export default async function Nav() {
                   href="/cart"
                   data-testid="nav-cart-link"
                 >
-                  Cart (0)
+                  Cart (0) <ShoppingCartSolid />
                 </LocalizedClientLink>
               }
             >
