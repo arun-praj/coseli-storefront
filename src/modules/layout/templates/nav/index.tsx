@@ -1,5 +1,5 @@
 import { Suspense } from "react"
-import { ShoppingCartSolid } from "@medusajs/icons"
+import { ShoppingCartSolid, User } from "@medusajs/icons"
 
 import { listRegions } from "@lib/data"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
@@ -41,15 +41,7 @@ export default async function Nav() {
                   Search
                 </LocalizedClientLink>
               )}
-              <LocalizedClientLink
-                className="hover:text-ui-fg-base"
-                href="/account"
-                data-testid="nav-account-link"
-              >
-                Account
-              </LocalizedClientLink>
-            </div>
-            <Suspense
+              <Suspense
               fallback={
                 <LocalizedClientLink
                   className="hover:text-ui-fg-base flex gap-2"
@@ -62,6 +54,14 @@ export default async function Nav() {
             >
               <CartButton />
             </Suspense>
+              <LocalizedClientLink
+                className="hover:text-ui-fg-base"
+                href="/account"
+                data-testid="nav-account-link"
+              >
+                <User />
+              </LocalizedClientLink>
+            </div>
           </div>
         </nav>
       </header>
