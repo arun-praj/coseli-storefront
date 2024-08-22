@@ -9,6 +9,7 @@ test.describe("Addresses tests", () => {
     checkoutPage,
     productPage,
     storePage,
+    aboutPage,
   }) => {
     await test.step("Navigate to the new address modal", async () => {
       await addressesPage.goto()
