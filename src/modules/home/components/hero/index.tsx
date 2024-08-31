@@ -21,7 +21,7 @@ const Hero = () => {
       {isClient && (
         <div className="absolute inset-0">
           <ReactPlayer
-            url="https://www.youtube.com/watch?v=lBpS4FXC51s&modestbranding=1&playsinline=1&controls=0&rel=0" // Replace with your YouTube URL
+            url="https://www.youtube.com/watch?v=RUW6X_J_c_0" // Replace with your YouTube URL
             playing
             muted
             loop
