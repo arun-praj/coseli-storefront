@@ -12,7 +12,7 @@ const nextConfig = withStoreConfig({
     ignoreBuildErrors: true,
   },
   images: {
-    domains:['coseli-backend.arunprajapati.com.np']
+    domains: ["coseli-backend.arunprajapati.com.np"],
     remotePatterns: [
       //   {
       //     protocol: "http",
