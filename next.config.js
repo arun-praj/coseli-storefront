@@ -13,10 +13,10 @@ const nextConfig = withStoreConfig({
   },
   images: {
     remotePatterns: [
-      {
-        protocol: "http",
-        hostname: "localhost",
-      },
+      //   {
+      //     protocol: "http",
+      //     hostname: "localhost",
+      //   },
       {
         protocol: "https",
         hostname: "coseli-backend.arunprajapati.com.npk",
