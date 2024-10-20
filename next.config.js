@@ -19,7 +19,7 @@ const nextConfig = withStoreConfig({
       },
       {
         protocol: "https",
-        hostname: "coseli-backend.arunprajapati.com.np",
+        hostname: "coseli-backend.arunprajapati.com.npk",
       },
       {
         protocol: "https",
