@@ -35,7 +35,26 @@ const sortProducts = (products: ProductPreviewType[], sortBy: SortOptions) => {
       return new Date(b.created_at).valueOf() - new Date(a.created_at).valueOf()
     })
   }
-
+  if (sortBy === "collection_formal") {
+    return products.filter(
+      (el) => el.collection_id === "pcol_01JCNSX4VE0S2RBEGCM2R1PN2G"
+    )
+  }
+  if (sortBy === "collection_casual") {
+    return products.filter(
+      (el) => el.collection_id === "pcol_01JCNSXCD8FZPB09EVGE7S04B0"
+    )
+  }
+  if (sortBy === "collection_boot") {
+    return products.filter(
+      (el) => el.collection_id === "pcol_01JCNSY9DMPJVHEDME0VG5GQ3F"
+    )
+  }
+  if (sortBy === "collection_kid") {
+    return products.filter(
+      (el) => el.collection_id === "pcol_01JCNSXYYE3PV869XWNF0MDT84"
+    )
+  }
   return products
 }
 

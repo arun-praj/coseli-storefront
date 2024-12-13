@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link"
 import { Popover, Transition } from "@headlessui/react"
 import { ArrowRightMini, XMark } from "@medusajs/icons"
 import { Region } from "@medusajs/medusa"
@@ -23,13 +24,32 @@ const SideMenu = ({ regions }: { regions: Region[] | null }) => {
 
   return (
     <div className="h-full">
-      <div className="flex items-center h-full">
+      <div className="flex items-center h-full gap-4">
         <Popover className="h-full flex">
           {({ open, close }) => (
             <>
-              <div className="relative flex h-full">
-                <Popover.Button data-testid="nav-menu-button" className="relative h-full flex items-center transition-all ease-out duration-200 focus:outline-none hover:text-ui-fg-base">
-                  Menu
+              <div className="relative flex h-full items-center gap-4 md:hidden">
+                <Popover.Button
+                  data-testid="nav-menu-button"
+                  className="relative h-full flex items-center transition-all ease-out duration-200 focus:outline-none hover:text-ui-fg-base"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="icon icon-tabler icons-tabler-outline icon-tabler-menu-2"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M4 6l16 0" />
+                    <path d="M4 12l16 0" />
+                    <path d="M4 18l16 0" />
+                  </svg>
                 </Popover.Button>
               </div>
 
@@ -44,7 +64,10 @@ const SideMenu = ({ regions }: { regions: Region[] | null }) => {
                 leaveTo="opacity-0"
               >
                 <Popover.Panel className="flex flex-col absolute w-full pr-4 sm:pr-0 sm:w-1/3 2xl:w-1/4 sm:min-w-min h-[calc(100vh-1rem)] z-30 inset-x-0 text-sm text-ui-fg-on-color m-2 backdrop-blur-2xl">
-                  <div data-testid="nav-menu-popup" className="flex flex-col h-full bg-[rgba(3,7,18,0.5)] rounded-rounded justify-between p-6">
+                  <div
+                    data-testid="nav-menu-popup"
+                    className="flex flex-col h-full bg-[rgba(3,7,18,0.5)] rounded-rounded justify-between p-6"
+                  >
                     <div className="flex justify-end" id="xmark">
                       <button data-testid="close-menu-button" onClick={close}>
                         <XMark />
@@ -96,6 +119,11 @@ const SideMenu = ({ regions }: { regions: Region[] | null }) => {
             </>
           )}
         </Popover>
+        <div className=" hidden md:flex gap-4">
+          <Link href={"/"}>HOME</Link>
+          <Link href={"/store"}>STORE</Link>
+          <Link href={"/about"}>ABOUT</Link>
+        </div>
       </div>
     </div>
   )

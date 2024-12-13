@@ -27,7 +27,7 @@ const PaymentButton: React.FC<PaymentButtonProps> = ({
     cart.shipping_methods.length < 1
       ? true
       : false
-
+  console.log(cart)
   const paidByGiftcard =
     cart?.gift_cards && cart?.gift_cards?.length > 0 && cart?.total === 0
 
@@ -57,6 +57,10 @@ const PaymentButton: React.FC<PaymentButtonProps> = ({
           cart={cart}
           data-testid={dataTestId}
         />
+      )
+    case "khalti-payment":
+      return (
+        <ManualTestPaymentButton notReady={notReady} data-testid={dataTestId} />
       )
     default:
       return <Button disabled>Select a payment method</Button>

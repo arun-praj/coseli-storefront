@@ -12,11 +12,19 @@ const nextConfig = withStoreConfig({
     ignoreBuildErrors: true,
   },
   images: {
-    domains: ["coseli-media.arunprajapati.com.np"],
+    // domains: ["coseli-mediax.arunprajapati.com.np"],
     remotePatterns: [
+      {
+        protocol: "http",
+        hostname: "localhost",
+      },
       {
         protocol: "https",
         hostname: "coseli-media.arunprajapati.com.np",
+      },
+      {
+        protocol: "https",
+        hostname: "medusa-public-images.s3.eu-west-1.amazonaws.com",
       },
     ],
   },

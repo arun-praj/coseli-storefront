@@ -1,8 +1,10 @@
 import { Text, clx } from "@medusajs/ui"
+import Image from "next/image"
 
 import { getCategoriesList, getCollectionsList } from "@lib/data"
 
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
+import next from "next"
 // import MedusaCTA from "@modules/layout/components/medusa-cta"
 
 export default async function Footer() {
@@ -18,7 +20,12 @@ export default async function Footer() {
               href="/"
               className="txt-compact-xlarge-plus text-ui-fg-subtle hover:text-ui-fg-base uppercase"
             >
-              Coseli Shoes
+              <Image
+                src={"/logo.png"}
+                alt={"Website logo"}
+                height={"80"}
+                width={"120"}
+              />
             </LocalizedClientLink>
           </div>
           <div className="text-small-regular gap-10 md:gap-x-16 grid grid-cols-2 sm:grid-cols-3">
@@ -27,7 +34,10 @@ export default async function Footer() {
                 <span className="txt-small-plus txt-ui-fg-base">
                   Categories
                 </span>
-                <ul className="grid grid-cols-1 gap-2" data-testid="footer-categories">
+                <ul
+                  className="grid grid-cols-1 gap-2"
+                  data-testid="footer-categories"
+                >
                   {product_categories?.slice(0, 6).map((c) => {
                     if (c.parent_category) {
                       return

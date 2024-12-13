@@ -11,19 +11,18 @@ type ThumbnailProps = {
   size?: "small" | "medium" | "large" | "full" | "square"
   isFeatured?: boolean
   className?: string
-  'data-testid'?: string
+  "data-testid"?: string
 }
 
 const Thumbnail: React.FC<ThumbnailProps> = ({
   thumbnail,
   images,
-  size = "small",
+  size = "square",
   isFeatured,
   className,
-  'data-testid': dataTestid
+  "data-testid": dataTestid,
 }) => {
   const initialImage = thumbnail || images?.[0]?.url
-
   return (
     <Container
       className={clx(
