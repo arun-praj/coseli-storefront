@@ -84,6 +84,16 @@ async function getCountryCode(
  * Middleware to handle region selection and onboarding status.
  */
 export async function middleware(request: NextRequest) {
+  const pathname = request.nextUrl.pathname
+  //   // Regex to check for static file extensions
+  const staticFileRegex =
+    /\.(png|jpg|jpeg|gif|svg|ico|webp|webm|woff|woff2|ttf|eot|otf|mp4|mp3|txt|xml|json|ico)$/i
+
+  // Skip redirection for static files
+  if (staticFileRegex.test(pathname)) {
+    return NextResponse.next()
+  }
+
   const searchParams = request.nextUrl.searchParams
   const isOnboarding = searchParams.get("onboarding") === "true"
   const cartId = searchParams.get("cart_id")
@@ -142,5 +152,7 @@ export async function middleware(request: NextRequest) {
 //   ],
 // }
 export const config = {
-  matcher: ["/((?!api|_next/static|_next/image|.*\\.png$|.*\\.jpg$).*)"],
+  matcher: [
+    "/((?!api|_next/static|_next/image|.*\\.png$|.*\\.jpg$|.*\\.webm$|favicon.ico|sitemap.xml|robots.txt|coming_soon.webm).*)",
+  ],
 }
