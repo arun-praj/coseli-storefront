@@ -20,7 +20,7 @@ const nextConfig = withStoreConfig({
       },
       {
         protocol: "https",
-        hostname: "coseli-media.arunprajapati.com.np",
+        hostname: "coselinepal.com",
       },
       {
         protocol: "https",
